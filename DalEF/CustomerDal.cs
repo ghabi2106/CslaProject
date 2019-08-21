@@ -152,6 +152,17 @@ namespace DalEF
             }
         }
 
+        public bool ExistsNameId(string name, int Id)
+        {
+            using (var ctx = DbContextManager<ModelContainer>.GetManager())
+            {
+                var result = (from c in ctx.DbContext.Customers
+                              where c.Name.Equals(name) && c.IdCustomer != Id
+                              select c.IdCustomer).Any();
+                return result;
+            }
+        }
+
         public bool ExistsAddress(string address)
         {
             using (var ctx = DbContextManager<ModelContainer>.GetManager())

@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressExistsCommand.cs" />
+    <Compile Include="Commands\DuplicateNameCommand.cs" />
     <Compile Include="Commands\NameCustomerCommand.cs" />
     <Compile Include="CustomerEdit.cs" />
     <Compile Include="CustomerInfo.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Rules\FieldExists.cs" />
     <Compile Include="Rules\GreaterThan.cs" />
     <Compile Include="Rules\GreaterThanOrEqual.cs" />
+    <Compile Include="Rules\IsDuplicateAsync.cs" />
     <Compile Include="Rules\IsInListRule.cs" />
     <Compile Include="Rules\IsNew.cs" />
     <Compile Include="Rules\IsNotNew.cs" />

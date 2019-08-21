@@ -20,6 +20,7 @@ namespace Dal
         //bool Exists(int idCustomer);
         //bool Exists(int idCustomer, int adminId);
         bool ExistsName(string Name);
+        bool ExistsNameId(string Name, int Id);
         bool ExistsAddress(string Address);
         void Insert(CustomerDto item);
         void Update(CustomerDto item);

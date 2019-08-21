@@ -217,8 +217,14 @@ namespace Library
             //BusinessRules.AddRule(new CustomerNameExistsRule(NameProperty));
             //BusinessRules.AddRule(new CustomerNameRequiredRule(NameProperty));
 
-            // use default rule set
+            BusinessRules.AddRule(new IsDuplicateNameAsync(NameProperty, IdProperty));
+
+            BusinessRules.RuleSet = "CustA";
             BusinessRules.AddRule(new DoAsyncRule(NameProperty));
+
+            // use default rule set
+            BusinessRules.RuleSet = "default";
+
         }
 
         public class CustomerNameExistsRule : BusinessRule
