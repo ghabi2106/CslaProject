@@ -1,0 +1,75 @@
+﻿@model ViewModels.CustomerEditViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CustomerInfo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelObject.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelObject.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelObject.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelObject.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelObject.Num1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelObject.Num1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelObject.Num2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelObject.Num2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelObject.Sum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelObject.Sum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelObject.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelObject.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelObject.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelObject.EndDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ModelObject.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

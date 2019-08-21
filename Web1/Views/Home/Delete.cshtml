@@ -1,0 +1,12 @@
+﻿<h2>Delete</h2>
+<p class="error">@ViewBag.ErrorMessage</p>
+<h3>Are you sure you want to delete this?</h3>
+@using (Html.BeginForm("Delete", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+
+}

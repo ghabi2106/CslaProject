@@ -1,0 +1,71 @@
+﻿@model ViewModels.CustomerListViewModel
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Address")
+        </th>
+        <th>
+            @Html.Label("Name")
+        </th>
+        <th>
+            @Html.Label("Num1")
+        </th>
+        <th>
+            @Html.Label("Num2")
+        </th>
+        <th>
+            @Html.Label("StartDate")
+        </th>
+        <th>
+            @Html.Label("EndDate")
+        </th>
+        <th>
+            @Html.Label("Sum")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Customers)
+    {
+        using (Html.BeginForm("Delete", "Home", new { id = item.Id }))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Num1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Num2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sum)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    <input type="submit" value="Delete" />
+                </td>
+            </tr>
+        }
+    }
+</table>
