@@ -5,7 +5,7 @@
 }
 <h2>Edit</h2>
 
-@using (Html.BeginForm("Edit", "Home"))
+@using (Html.BeginForm("Edit", "Customers"))
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.ModelObject.Id)

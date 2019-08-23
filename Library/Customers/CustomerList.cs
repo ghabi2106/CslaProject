@@ -4,11 +4,12 @@ using Csla;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Dal;
+using Dal.Customers;
 
-namespace Library
+namespace Library.Customers
 {
     [Serializable()]
-    public class CustomerList : ReadOnlyListBase<CustomerList, CustomerInfo>
+    public class CustomerList : ReadOnlyListBase<CustomerList, Customer>
     {
         #region Methods
 
@@ -42,14 +43,14 @@ namespace Library
             var rlce = RaiseListChangedEvents;
             RaiseListChangedEvents = false;
             IsReadOnly = false;
-            using (var ctx = Dal.DalFactory.GetManager())
+            using (var ctx = DalFactory.GetManager())
             {
-                var dal = ctx.GetProvider<Dal.ICustomerDal>();
-                List<Dal.CustomerDto> list = dal.Fetch();
+                var dal = ctx.GetProvider<ICustomerDal>();
+                List<CustomerDto> list = dal.Fetch();
 
                 foreach (var item in list)
                 {
-                    Add(DataPortal.FetchChild<CustomerInfo>(item));
+                    Add(DataPortal.FetchChild<Customer>(item));
                 }
             }
             IsReadOnly = true;
@@ -61,7 +62,7 @@ namespace Library
             RaiseListChangedEvents = false;
             IsReadOnly = false;
             foreach (var item in list)
-                Add(DataPortal.FetchChild<CustomerInfo>(item));
+                Add(DataPortal.FetchChild<Customer>(item));
             IsReadOnly = true;
             RaiseListChangedEvents = rlce;
         }

@@ -44,10 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConcurrencyException.cs" />
-    <Compile Include="CustomerDto.cs" />
+    <Compile Include="Customers\CustomerDto.cs" />
     <Compile Include="DalFactory.cs" />
     <Compile Include="DataNotFoundException.cs" />
-    <Compile Include="ICustomerDal.cs" />
+    <Compile Include="Customers\ICustomerDal.cs" />
     <Compile Include="IDalManager.cs" />
     <Compile Include="PagerDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,5 +58,6 @@
   <ItemGroup>
     <Analyzer Include="..\packages\CSLA-Core.4.11.2\analyzers\c#\Csla.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

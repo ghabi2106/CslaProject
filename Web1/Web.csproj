@@ -55,6 +55,12 @@
     <Reference Include="Csla.Web.Mvc5, Version=4.11.2.0, Culture=neutral, PublicKeyToken=93be5fdc093e4c30, processorArchitecture=MSIL">
       <HintPath>..\packages\CSLA-ASP.NET-MVC5.4.11.2\lib\net461\Csla.Web.Mvc5.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -151,6 +157,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Customers\Controllers\CustomersController.cs" />
+    <Compile Include="Areas\Customers\CustomersAreaRegistration.cs" />
+    <Compile Include="Areas\Orders\OrdersAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -169,6 +178,13 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Customers\Views\web.config" />
+    <Content Include="Areas\Customers\Views\Customers\Create.cshtml" />
+    <Content Include="Areas\Customers\Views\Customers\Delete.cshtml" />
+    <Content Include="Areas\Customers\Views\Customers\Details.cshtml" />
+    <Content Include="Areas\Customers\Views\Customers\Edit.cshtml" />
+    <Content Include="Areas\Customers\Views\Customers\Index.cshtml" />
+    <Content Include="Areas\Orders\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -201,6 +217,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Customers\Models\" />
+    <Folder Include="Areas\Customers\Views\Shared\" />
+    <Folder Include="Areas\Orders\Controllers\" />
+    <Folder Include="Areas\Orders\Models\" />
+    <Folder Include="Areas\Orders\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

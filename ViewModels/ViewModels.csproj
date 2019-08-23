@@ -50,8 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerEditViewModel.cs" />
-    <Compile Include="CustomerListViewModel.cs" />
+    <Compile Include="Customers\CustomerEditViewModel.cs" />
+    <Compile Include="Customers\CustomerListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

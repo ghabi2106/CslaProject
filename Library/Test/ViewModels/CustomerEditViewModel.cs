@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Csla.Web.Mvc;
+using Library.Customers;
 
 namespace Library.ViewModels
 {
-    public class CustomerEditViewModel : ViewModelBase<CustomerEdit>, IViewModel
+    public class CustomerEditViewModel : ViewModelBase<Customer>, IViewModel
     {
         //setter for internal id prop
         public int CustomerId
@@ -40,13 +41,13 @@ namespace Library.ViewModels
         //default
         public void CustomerViewModel()
         {
-            ModelObject = CustomerEdit.NewCustomer();
+            ModelObject = Customer.NewCustomer();
         }
 
         //convenience
         public void CustomerViewModel(int id)
         {
-            ModelObject = CustomerEdit.GetCustomer(id);
+            ModelObject = Customer.GetCustomer(id);
         }
     }
 }

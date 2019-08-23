@@ -3,9 +3,9 @@ using Csla;
 using Csla.Serialization;
 using System.Configuration;
 using System.Threading.Tasks;
-#if !SILVERLIGHT
 using Dal;
-#endif
+using Library.Customers;
+using Dal.Customers;
 
 namespace Library
 {
@@ -122,7 +122,7 @@ namespace Library
 
         #region Constructor
 
-        public CustomerInfo(CustomerEdit item)
+        public CustomerInfo(Customer item)
         {
             Address = item.Address;
             Name = item.Name;
@@ -149,13 +149,11 @@ namespace Library
 
         public static CustomerInfo GetCustomer(int idCustomer)
         {
-            var t = DataPortal.Fetch<CustomerInfo>(idCustomer);
             return DataPortal.Fetch<CustomerInfo>(idCustomer);
         }
 
         public static async Task<CustomerInfo> GetCustomerAsync(int idCustomer)
         {
-            //var t = DataPortal.FetchAsync<CustomerInfo>(idCustomer);
             return await DataPortal.FetchAsync<CustomerInfo>(idCustomer);
         }
 

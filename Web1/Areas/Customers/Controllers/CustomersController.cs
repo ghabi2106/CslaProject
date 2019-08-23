@@ -12,10 +12,9 @@ using System.Web.Mvc;
 using ViewModels;
 using ViewModels.Customers;
 
-namespace Web.Controllers
+namespace Web1.Areas.Customers.Controllers
 {
-    //[HandleError]
-    public class HomeController : Csla.Web.Mvc.Controller
+    public class CustomersController : Csla.Web.Mvc.Controller
     {
         public ActionResult Index()
         {
@@ -45,7 +44,7 @@ namespace Web.Controllers
         {
             var customerEditViewModel = new CustomerEditViewModel(id);
             return View(customerEditViewModel);
-            
+
             //if (id == null)
             //{
             //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

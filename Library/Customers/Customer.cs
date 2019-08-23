@@ -15,11 +15,12 @@ using System.Collections.Generic;
 using Csla.Rules.CommonRules;
 using Library.Rules;
 using Library.Properties;
+using Dal.Customers;
 
-namespace Library
+namespace Library.Customers
 {
     [Serializable]
-    public class CustomerEdit : BusinessBase<CustomerEdit>
+    public class Customer : BusinessBase<Customer>
     {
         // When a CustomerEdit is created
 
@@ -294,44 +295,44 @@ namespace Library
         #endregion
 
         #region Factory
-        public static CustomerEdit NewCustomer()
+        public static Customer NewCustomer()
         {
-            return DataPortal.Create<CustomerEdit>();
+            return DataPortal.Create<Customer>();
         }
 
-        public static async Task<CustomerEdit> NewCustomerAsync()
+        public static async Task<Customer> NewCustomerAsync()
         {
-            return await DataPortal.CreateAsync<CustomerEdit>();
+            return await DataPortal.CreateAsync<Customer>();
         }
 
-        public static CustomerEdit GetCustomer(int id)
+        public static Customer GetCustomer(int id)
         {
-            return DataPortal.Fetch<CustomerEdit>(id);
+            return DataPortal.Fetch<Customer>(id);
         }
 
-        public static async Task<CustomerEdit> GetCustomerAsync(int id)
+        public static async Task<Customer> GetCustomerAsync(int id)
         {
-            return await DataPortal.FetchAsync<CustomerEdit>(id);
+            return await DataPortal.FetchAsync<Customer>(id);
         }
 
-        public static async Task<CustomerEdit> GetCustomerByNameAsync(string name)
+        public static async Task<Customer> GetCustomerByNameAsync(string name)
         {
-            return await DataPortal.FetchAsync<CustomerEdit>(name);
+            return await DataPortal.FetchAsync<Customer>(name);
         }
 
         public static void DeleteCustomer(int id)
         {
-            DataPortal.Delete<CustomerEdit>(id);
+            DataPortal.Delete<Customer>(id);
         }
 
         public static async Task DeleteCustomerAsync(int id)
         {
-            await DataPortal.DeleteAsync<CustomerEdit>(id);
+            await DataPortal.DeleteAsync<Customer>(id);
         }
 
-        public static async Task<CustomerEdit> GetExistingCustomerAsync(int customerId)
+        public static async Task<Customer> GetExistingCustomerAsync(int customerId)
         {
-            return await DataPortal.FetchAsync<CustomerEdit>(new Criteria { Id = customerId });
+            return await DataPortal.FetchAsync<Customer>(new Criteria { Id = customerId });
         }
 
         public static async Task<bool> IsCustomerNameExistAsync(string name)
@@ -381,6 +382,18 @@ namespace Library
                     //EndDate = data.EndDate.ToString("yyyy/MM/dd");
                 }
             }
+        }
+
+        private void Child_Fetch(CustomerDto item)
+        {
+            Address = item.Address;
+            Name = item.Name;
+            Id = item.Id;
+            Num1 = item.Num1;
+            Num2 = item.Num2;
+            Sum = item.Sum;
+            StartDate = item.StartDate.ToString("yyyy/MM/dd");
+            EndDate = item.EndDate.ToString("yyyy/MM/dd");
         }
 
         protected override void DataPortal_Insert()

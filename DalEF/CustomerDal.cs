@@ -7,6 +7,7 @@ using System.Data;
 using Csla.Data;
 using Dal;
 using Csla.Data.EF6;
+using Dal.Customers;
 
 namespace DalEF
 {

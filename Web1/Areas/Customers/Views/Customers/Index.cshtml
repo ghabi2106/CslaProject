@@ -1,9 +1,9 @@
 ﻿@model ViewModels.Customers.CustomerListViewModel
 @{
-    ViewBag.Title = "Home";
+    ViewBag.Title = "Customers List";
 }
 
-<h2>Home</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -36,7 +36,7 @@
 
     @foreach (var item in Model.Customers)
     {
-        using (Html.BeginForm("Delete", "Home", new { id = item.Id }))
+        using (Html.BeginForm("Delete", "Customers", new { id = item.Id }))
         {
             <tr>
                 <td>

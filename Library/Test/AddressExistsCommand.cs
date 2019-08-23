@@ -1,4 +1,5 @@
 ﻿using Csla;
+using Dal.Customers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,7 +71,7 @@ namespace Library
         {
             using (var ctx = Dal.DalFactory.GetManager())
             {
-                var dal = ctx.GetProvider<Dal.ICustomerDal>();
+                var dal = ctx.GetProvider<ICustomerDal>();
                 isExist = dal.ExistsAddress(Address);
             }
         }

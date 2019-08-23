@@ -11,6 +11,7 @@
 using System;
 
 using Csla;
+using Dal.Customers;
 
 namespace Library.Commands
 {
@@ -109,7 +110,7 @@ namespace Library.Commands
         {
             using (var ctx = Dal.DalFactory.GetManager())
             {
-                var dal = ctx.GetProvider<Dal.ICustomerDal>();
+                var dal = ctx.GetProvider<ICustomerDal>();
                 IsExist = dal.ExistsNameId(Name, Id);
             }
         }

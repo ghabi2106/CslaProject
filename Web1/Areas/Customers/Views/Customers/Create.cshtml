@@ -1,14 +1,14 @@
 ﻿@model ViewModels.Customers.CustomerEditViewModel
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Create";
 }
-<h2>Edit</h2>
 
-@using (Html.BeginForm("Edit", "Home"))
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Customers", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    @Html.HiddenFor(model => model.ModelObject.Id)
 
     <div class="form-horizontal">
         <h4>EquipmentModel</h4>
@@ -47,12 +47,12 @@
         </div>
 
         @*<div class="form-group">
-                @Html.LabelFor(model => model.ModelObject.Sum, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.ModelObject.Sum, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.ModelObject.Sum, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
+            @Html.LabelFor(model => model.ModelObject.Sum, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ModelObject.Sum, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ModelObject.Sum, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.ModelObject.StartDate, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -72,7 +72,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -81,3 +81,5 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+

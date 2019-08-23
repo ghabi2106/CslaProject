@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dal
+namespace Dal.Customers
 {
     public partial class CustomerDto
     {

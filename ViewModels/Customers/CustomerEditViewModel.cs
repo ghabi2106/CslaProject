@@ -1,14 +1,15 @@
 ﻿using Csla.Web.Mvc;
 using Library;
+using Library.Customers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ViewModels
+namespace ViewModels.Customers
 {
-    public class CustomerEditViewModel : ViewModelBase<CustomerEdit>, IViewModel
+    public class CustomerEditViewModel : ViewModelBase<Customer>, IViewModel
     {
         //setter for internal id prop
         public int CustomerId
@@ -41,7 +42,7 @@ namespace ViewModels
         //default
         public CustomerEditViewModel()
         {
-            ModelObject = CustomerEdit.NewCustomer();
+            ModelObject = Customer.NewCustomer();
             //ModelObject.ValidationComplete += (o, e) =>
             // {
             //     var obj = (CustomerEdit)o;
@@ -52,7 +53,7 @@ namespace ViewModels
         //convenience
         public CustomerEditViewModel(int id)
         {
-            ModelObject = CustomerEdit.GetCustomer(id);
+            ModelObject = Customer.GetCustomer(id);
         }
     }
 }
