@@ -52,6 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Orders\Order.cs" />
+    <Compile Include="Orders\OrderDetail.cs" />
+    <Compile Include="Orders\OrderDetailsLists.cs" />
+    <Compile Include="Orders\OrdersList.cs" />
     <Compile Include="Test\AddressExistsCommand.cs" />
     <Compile Include="Commands\DuplicateNameCommand.cs" />
     <Compile Include="Commands\NameCustomerCommand.cs" />
@@ -118,5 +122,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

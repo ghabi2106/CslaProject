@@ -49,6 +49,10 @@
     <Compile Include="DataNotFoundException.cs" />
     <Compile Include="Customers\ICustomerDal.cs" />
     <Compile Include="IDalManager.cs" />
+    <Compile Include="Orders\IOrderDetailDal.cs" />
+    <Compile Include="Orders\OrderDetailDto.cs" />
+    <Compile Include="Orders\OrderDto.cs" />
+    <Compile Include="Orders\IOrderDal.cs" />
     <Compile Include="PagerDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Customers\Controllers\CustomersController.cs" />
     <Compile Include="Areas\Customers\CustomersAreaRegistration.cs" />
+    <Compile Include="Areas\Orders\Controllers\OrdersController.cs" />
     <Compile Include="Areas\Orders\OrdersAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -185,6 +186,8 @@
     <Content Include="Areas\Customers\Views\Customers\Edit.cshtml" />
     <Content Include="Areas\Customers\Views\Customers\Index.cshtml" />
     <Content Include="Areas\Orders\Views\web.config" />
+    <Content Include="Areas\Customers\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Orders\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -219,8 +222,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Customers\Models\" />
     <Folder Include="Areas\Customers\Views\Shared\" />
-    <Folder Include="Areas\Orders\Controllers\" />
     <Folder Include="Areas\Orders\Models\" />
+    <Folder Include="Areas\Orders\Views\Orders\" />
     <Folder Include="Areas\Orders\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>

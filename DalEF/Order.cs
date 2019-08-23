@@ -12,25 +12,24 @@ namespace DalEF
     using System;
     using System.Collections.Generic;
     
-    public partial class Customer
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
+        public Order()
         {
-            this.Orders = new HashSet<Order>();
+            this.OrderDetails = new HashSet<OrderDetail>();
         }
     
-        public int IdCustomer { get; set; }
-        public string Name { get; set; }
-        public string Address { get; set; }
+        public System.Guid OrderId { get; set; }
+        public System.DateTime OrderDate { get; set; }
+        public int Status { get; set; }
+        public Nullable<System.DateTime> ShippedDate { get; set; }
+        public Nullable<System.DateTime> ReceivedDate { get; set; }
         public bool Enable { get; set; }
-        public int Num1 { get; set; }
-        public int Num2 { get; set; }
-        public int Sum { get; set; }
-        public System.DateTime StartDate { get; set; }
-        public System.DateTime EndDate { get; set; }
+        public int CustomerIdCustomer { get; set; }
     
+        public virtual Customer Customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

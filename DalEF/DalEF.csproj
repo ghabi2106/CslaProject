@@ -58,6 +58,8 @@
     <Compile Include="Customer.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrderDetailDal.cs" />
+    <Compile Include="OrderDal.cs" />
     <Compile Include="CustomerDal.cs" />
     <Compile Include="DalManager.cs" />
     <Compile Include="Model.Context.cs">
@@ -74,6 +76,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetail.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

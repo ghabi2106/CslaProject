@@ -66,5 +66,8 @@
   <ItemGroup>
     <Analyzer Include="..\packages\CSLA-Core.4.11.2\analyzers\c#\Csla.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Orders\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

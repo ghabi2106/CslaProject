@@ -6,6 +6,10 @@
     <edmx:Diagrams>
       <Diagram DiagramId="9f1461e7cf1543a2ac227aecaaf1f381" Name="Diagram1" >
         <EntityTypeShape EntityType="Model.Customer" Width="1.5" PointX="4.25" PointY="0.875" />
+        <EntityTypeShape EntityType="Model.Order" Width="1.5" PointX="6.875" PointY="0.875" />
+        <EntityTypeShape EntityType="Model.OrderDetail" Width="1.5" PointX="9.875" PointY="1.125" />
+        <AssociationConnector Association="Model.CustomerOrder" />
+        <AssociationConnector Association="Model.OrderOrderDetail" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

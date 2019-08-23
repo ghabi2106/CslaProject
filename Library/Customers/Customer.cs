@@ -369,6 +369,7 @@ namespace Library.Customers
                 var data = dal.Fetch(id);
                 if (data == null)
                     return;
+                BusinessRules.SuppressRuleChecking = true;
                 using (BypassPropertyChecks)
                 {
                     DataMapper.Map(data, this);
@@ -381,19 +382,26 @@ namespace Library.Customers
                     //StartDate = data.StartDate.ToString("yyyy/MM/dd");
                     //EndDate = data.EndDate.ToString("yyyy/MM/dd");
                 }
+                BusinessRules.SuppressRuleChecking = false;
             }
         }
 
         private void Child_Fetch(CustomerDto item)
         {
-            Address = item.Address;
-            Name = item.Name;
-            Id = item.Id;
-            Num1 = item.Num1;
-            Num2 = item.Num2;
-            Sum = item.Sum;
-            StartDate = item.StartDate.ToString("yyyy/MM/dd");
-            EndDate = item.EndDate.ToString("yyyy/MM/dd");
+            BusinessRules.SuppressRuleChecking = true;
+            using (BypassPropertyChecks)
+            {
+                DataMapper.Map(item, this);
+                //Address = item.Address;
+                //Name = item.Name;
+                //Id = item.Id;
+                //Num1 = item.Num1;
+                //Num2 = item.Num2;
+                //Sum = item.Sum;
+                //StartDate = item.StartDate.ToString("yyyy/MM/dd");
+                //EndDate = item.EndDate.ToString("yyyy/MM/dd");
+            }
+            BusinessRules.SuppressRuleChecking = false;
         }
 
         protected override void DataPortal_Insert()
