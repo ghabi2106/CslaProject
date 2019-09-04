@@ -1,11 +1,7 @@
 ###############################################################################
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
-
-*.java linguist-detectable=true
-*.js linguist-detectable=false
-*.html linguist-detectable=false
-*.xml linguist-detectable=false
+* text=auto
 
 
 ###############################################################################
